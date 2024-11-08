@@ -17,7 +17,9 @@ const AttendSchema = new Schema<AttendDocument>({
   direction: String,
 });
 
-const Attend = mongoose.models.Attend || mongoose.model<AttendDocument>('Attend', AttendSchema);
+const Attend =
+  mongoose.models.Attend ||
+  mongoose.model<AttendDocument>('Attend', AttendSchema);
 
 export async function POST(req: Request) {
   await connectDB();
@@ -35,6 +37,9 @@ export async function POST(req: Request) {
     await newAttend.save();
     return NextResponse.json(newAttend.toJSON(), { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch users' }, { status: 500 });
+    return NextResponse.json(
+      { error: `Failed to fetch users${error}` },
+      { status: 500 }
+    );
   }
 }
