@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-
 import mongoose, { Schema, Document } from 'mongoose';
 import { connectDB } from '../../../../lib/mongodb';
 
