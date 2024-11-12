@@ -39,11 +39,11 @@ export async function POST(req: Request) {
       { message: 'User added successfully' },
       { status: 201 }
     );
+
     response.headers.set('Access-Control-Allow-Origin', '*'); // 모든 도메인 허용
     response.headers.set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS'); // 허용된 메서드
     response.headers.set('Access-Control-Allow-Headers', 'Content-Type'); // 허용된 헤더
 
-    // return NextResponse.json(newAttend.toJSON(), { status: 201 });
     return response;
   } catch (error) {
     return NextResponse.json(
@@ -51,4 +51,13 @@ export async function POST(req: Request) {
       { status: 500 }
     );
   }
+}
+
+export async function OPTIONS() {
+  const response = NextResponse.json({}, { status: 200 });
+  response.headers.set('Access-Control-Allow-Origin', '*');
+  response.headers.set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+
+  return response;
 }
