@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import mongoose, { Schema, Document } from 'mongoose';
 import { connectDB } from '../../../../lib/mongodb';
 
@@ -20,7 +20,7 @@ const Attend =
   mongoose.models.Attend ||
   mongoose.model<AttendDocument>('Attend', AttendSchema);
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   await connectDB();
 
   try {
