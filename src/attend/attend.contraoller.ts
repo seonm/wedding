@@ -21,10 +21,10 @@ export class AttendController {
     return this.attendService.create(createAttendDto);
   }
 
-  @Get()
-  async findAll(@Query('search') search?: string) {
-    return this.attendService.findAll(search);
-  }
+  // @Get()
+  // async findAll(@Query('search') search?: string) {
+  //   return this.attendService.findAll(search);
+  // }
 
   @Get()
   async findOne(@Query('name') name?: string, @Query('tel') tel?: string) {
