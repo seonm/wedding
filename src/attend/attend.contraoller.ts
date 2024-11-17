@@ -26,7 +26,7 @@ export class AttendController {
     return this.attendService.findAll(search);
   }
 
-  @Get(':id')
+  @Get()
   async findOne(@Query('name') name?: string, @Query('tel') tel?: string) {
     return this.attendService.findOne({ name, tel });
   }
