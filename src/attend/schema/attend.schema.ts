@@ -1,11 +1,3 @@
-// import * as mongoose from 'mongoose';
-
-// export const CatSchema = new mongoose.Schema({
-//   name: String,
-//   age: Number,
-//   breed: String,
-// });
-
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
