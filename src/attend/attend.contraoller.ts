@@ -27,8 +27,8 @@ export class AttendController {
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: string) {
-    return this.attendService.findOne(id);
+  async findOne(@Query('name') name?: string, @Query('tel') tel?: string) {
+    return this.attendService.findOne({ name, tel });
   }
 
   @Put(':id')

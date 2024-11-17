@@ -28,9 +28,10 @@ export class AttendService {
   }
 
   // Read One
-  async findOne(id: string): Promise<Attend> {
-    const attend = await this.attendModel.findById(id).exec();
+  async findOne({ name, tel }: { name: string; tel: string }): Promise<Attend> {
+    const attend = await this.attendModel.findOne({ name, tel });
     if (!attend) throw new NotFoundException('Attend not found');
+
     return attend;
   }
 
