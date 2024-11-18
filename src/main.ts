@@ -6,7 +6,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: ['https://seonm.github.io', 'http://localhost:3000'],
+    origin: [
+      'https://seonm.github.io',
+      'http://localhost:3000',
+      'https://wedding-api-iota.vercel.app',
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: [
       'Origin',
@@ -15,7 +19,6 @@ async function bootstrap() {
       'Accept',
       'Authorization',
     ],
-    credentials: true,
   });
 
   app.use((req: Request, res: Response, next: Function) => {
