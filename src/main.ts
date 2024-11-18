@@ -8,8 +8,8 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'https://seonm.github.io',
+      'https://seonm.github.io/attend',
       'http://localhost:3000',
-      'https://wedding-api-iota.vercel.app',
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: [
