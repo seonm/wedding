@@ -12,7 +12,7 @@ import {
 import { AttendService } from './attend.service';
 import { CreateAttendDto, UpdateAttendDto } from './dto/attend.dto';
 
-@Controller('attend')
+@Controller('api/attend')
 export class AttendController {
   constructor(private readonly attendService: AttendService) {}
 
